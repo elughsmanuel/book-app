@@ -1,0 +1,4 @@
+## GIT IGNORE FILES
+
+# dependencies
+/node_modules
