@@ -54,7 +54,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .main-nav {
@@ -82,6 +82,10 @@ section {
     color: var(--color-black);
     border-bottom: 3px solid var(--color-primary);
     padding: 5px 10px;
+}
+
+.main-nav li a i {
+    margin-left: 7px;
 }
 
 .search-nav {
@@ -125,9 +129,10 @@ section {
 
 .monthly-box {
     width: 100%;
+    margin-bottom: 3rem;
 }
 
-.monthly-box h3 {
+.heading-secondary {
     font-size: 2rem;
     color: var(--color-black);
     font-weight: 600;
@@ -177,6 +182,7 @@ section {
     color: var(--color-black);
     font-weight: 600;
     line-height: 120%;
+    margin-bottom: 1rem;
 }
 
 .monthly-sub-content {
@@ -187,6 +193,7 @@ section {
 
 .box-1-of-2-sc {
     flex-basis: 30%;
+    text-align: center;
 }
 
 .box-1-of-2-sc h1 {
@@ -203,7 +210,12 @@ section {
     letter-spacing: 1px;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 0;
+    margin-bottom: 5px;
+}
+
+.box-1-of-2-sc i {
+    font-size: 2rem;
+    color: var(--color-gray);
 }
 
 .monthly-content .btn-con {
@@ -227,4 +239,120 @@ section {
 .monthly-content button i {
     font-size: 2rem;
     color: var(--color-white);
+}
+
+.search-box {
+    width: 100%;
+}
+
+.box-search {
+    width: 100%;
+    height: 12rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.box-1-of-2-s {
+    flex-basis: 49%;
+    background-color: var(--color-white);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 2rem;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.box-1-of-2-s:hover {
+    transform: translateY(-2%);
+}
+
+.box-search-first-row .box-1-of-2-s:first-child {
+    background-color: var(--color-primary);
+}
+
+.box-search-first-row .box-1-of-2-s:first-child .search-content h2,
+.box-search-first-row .box-1-of-2-s:first-child .search-content h3,
+.box-search-first-row .box-1-of-2-s:first-child .search-sub-content h1,
+.box-search-first-row .box-1-of-2-s:first-child .search-sub-content h3 {
+    color: var(--color-white);
+}
+
+
+.search-pic-preview {
+    flex-basis: 15%;
+}
+
+.search-pic-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 2rem;
+}
+
+.search-content {
+    flex-basis: 80%;
+}
+
+.search-content {
+    width: 100%;
+}
+
+.search-content h2 {
+    font-size: 2rem;
+    color: var(--color-black);
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.search-content h3 {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.search-sub-content {
+    width: 15%;
+}
+
+.search-sub-content h1 {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    font-weight: 700;
+    text-align: center;
+}
+
+.search-sub-content h3 {
+    font-size: 1.2rem;
+    color: var(--color-gray);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.next-previous-step {
+    width: 100%;
+    text-align: right;
+}
+
+.next-previous-step button {
+    margin: 0 1rem;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.next-previous-step i {
+    font-size: 2.5rem;
+    color: var(--color-gray);
+    transition: all 1s;
+}
+
+.next-previous-step i:hover {
+    color: var(--color-black);
+    transform: translateY(-2%);
 }
