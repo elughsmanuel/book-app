@@ -18,7 +18,7 @@ body {
     --color-secondary: #121421;
     --color-gray: #7c7e8c;
     --color-gray-light: #f5f5f5;
-    --color-black: #000
+    --color-black: #000;
     --color-white: #fff;
 }
 
@@ -54,6 +54,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 3rem;
 }
 
 .main-nav {
@@ -119,4 +120,111 @@ section {
 .search-nav button i {
     font-size: 1.5rem;
     color: var(--color-gray);
+}
+
+
+.monthly-box {
+    width: 100%;
+}
+
+.monthly-box h3 {
+    font-size: 2rem;
+    color: var(--color-black);
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.box-monthly {
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-1-of-2 {
+    flex-basis: 49%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    border-radius: 2rem;
+    padding: 1rem 1rem;
+    transition: all 1s;
+}
+
+.box-1-of-2:hover {
+    transform: translateY(-2%);
+}
+
+.monthly-pic-preview {
+    flex-basis: 35%;
+}
+
+.monthly-pic-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    border-radius: 2rem;
+}
+
+.monthly-content {
+    flex-basis: 60%;
+    align-self: end;
+}
+
+.monthly-content h2 {
+    font-size: 2.5rem;
+    color: var(--color-black);
+    font-weight: 600;
+    line-height: 120%;
+}
+
+.monthly-sub-content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.box-1-of-2-sc {
+    flex-basis: 30%;
+}
+
+.box-1-of-2-sc h1 {
+    font-size: 1.5rem;
+    color: var(--color-gray);
+    font-weight: 700;
+    text-align: center;
+}
+
+.box-1-of-2-sc h3 {
+    font-size: 1.2rem;
+    color: var(--color-gray);
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.monthly-content .btn-con {
+    width: 100%;
+    text-align: right;
+}
+
+.monthly-content button {
+    padding: 1rem 1.5rem;
+    border: none;
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 1s;
+}
+
+.monthly-content button:hover {
+    transform: translateY(-2%);
+}
+
+.monthly-content button i {
+    font-size: 2rem;
+    color: var(--color-white);
 }
