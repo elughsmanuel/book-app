@@ -1,3 +1,60 @@
+import Search from './models/Search';
+
+const state = {}
+
+const controlSearch = async () => {
+    const query = 'harry porter';
+    
+
+    if(query) {
+        state.search = new Search(query);
+        try {
+            await state.search.getResults();
+        }
+        catch(err) {
+            console.log('Error !!!');
+        }
+    }
+}
+
+controlSearch();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////////////
 // TEMPORARY
 
