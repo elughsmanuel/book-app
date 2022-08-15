@@ -1,0 +1,216 @@
+import axios from 'axios';
+// import { key, proxy } from '../config';
+
+export default class Search {
+    constructor(query) {
+        this.query = query;
+    }
+
+    async getResults(query) {
+        try {
+            const res = await axios(`https://forkify-api.herokuapp.com/api/search?q=${this.query}`);
+            this.result = res.data.recipes;
+            // console.log(this.result);
+        }
+        catch(error) {
+            alert(error)
+        }
+    
+    }
+}
+
+
+
+// getResults('pizza');
+
+
+
+
+/////////////////////////////////////////////////
+// SEARCH CONTROLLER
+const controlSearch = async () => {
+    // 1. Get query from the view
+    const query = searchView.getInput();
+//    const query = 'pizza';
+    // console.log(query);
+
+    if(query) {
+        // 2. New search object and add to state
+        state.search = new Search(query);
+
+        // 3. Prepare UI for results
+        searchView.clearInput();
+        searchView.clearResults();
+        renderLoader(elements.searchRes);
+
+        try {
+            // 4. Search for recipes
+            await state.search.getResults();
+
+            // 5. Render results on UI
+            clearLoader();
+            searchView.renderResults(state.search.result);
+        }
+        catch(err) {
+            alert('Something wrong with the search...')
+        }
+    }
+}
+
+
+
+export const elements = {
+    searchForm: document.querySelector('.search'),
+    searchInput: document.querySelector('.search__field'),
+    searchRes: document.querySelector('.results'),
+    searchResList: document.querySelector('.results__list'),
+    searchResPages: document.querySelector('.results__pages'),
+    recipe: document.querySelector('.recipe'),
+    shopping: document.querySelector('.shopping__list'),
+    likesMenu: document.querySelector('.likes__field'),
+    likesList: document.querySelector('.likes__list')
+};
+
+export const elementStrings = {
+    loader: 'loader'
+};
+
+export const renderLoader = parent => {
+    const loader = `
+        <div class="loader">
+            <svg>
+                <use href="img/icons.svg#icon-cw"></use>  
+            </svg>
+        </div>
+    `;
+    parent.insertAdjacentHTML('afterbegin', loader);
+};
+
+export const clearLoader = () => {
+    const loader = document.querySelector(`.${elementStrings.loader}`);
+    if(loader) loader.parentElement.removeChild(loader);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { elements } from "./base";
+
+export const getInput = () => elements.searchInput.value;
+
+export const clearInput = () => {
+  elements.searchInput.value = "";
+};
+
+export const clearResults = () => {
+  elements.searchResList.innerHTML = '';
+  elements.searchResPages.innerHTML = '';
+};
+
+export const highlightSelected = id => {
+  const resultsArr = Array.from(document.querySelectorAll('.results__link'));
+  resultsArr.forEach(el => {
+    el.classList.remove('results__link--active');
+  })
+  document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
+};
+
+// 'Pasta with tomato and spinach'
+// acc: 0 / acc + cur.length = 5 / newTitle = ['Pasta']
+// acc: 5 / acc + cur.length = 9 / newTitle = ['Pasta', 'with']
+// acc: 9 / acc + cur.length = 15 / newTitle = ['Pasta', 'with', 'tomato']
+// acc: 15 / acc + cur.length = 18 / newTitle = ['Pasta', 'with', 'tomato']
+// acc: 18 / acc + cur.length = 24 / newTitle = ['Pasta', 'with', 'tomato']
+
+export const limitRecipeTitle = (title, limit = 17) => {
+  const newTitle = [];
+  if (title.length > limit) {
+    title.split(" ").reduce((acc, cur) => {
+      if (acc + cur.length <= limit) {
+        newTitle.push(cur);
+      }
+      return acc + cur.length;
+    }, 0);
+
+    // return the result
+    return `${newTitle.join(" ")} ...`;
+  }
+  return title;
+};
+
+const renderRecipe = (recipe) => {
+  const markup = `
+                    <li>
+                        <a class="results__link" href="#${recipe.recipe_id}">
+                            <figure class="results__fig">
+                                <img src="${recipe.image_url}" alt="${
+    recipe.title
+  }">
+                            </figure>
+                            <div class="results__data">
+                                <h4 class="results__name">${limitRecipeTitle(
+                                  recipe.title
+                                )}</h4>
+                                <p class="results__author">${
+                                  recipe.publisher
+                                }</p>
+                            </div>
+                        </a>
+                    </li>
+                `;
+  elements.searchResList.insertAdjacentHTML("beforeend", markup);
+};
+
+// type: 'prev' or 'next'
+
+const createButton = (page, type) => `
+    <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+        <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
+        <svg class="search__icon">
+            <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>
+        </svg>
+    </button>
+`;
+
+const renderButton = (page, numResults, resPerPage) => {
+  const pages = Math.ceil(numResults / resPerPage);
+
+  let button;
+  if (page === 1 && pages > 1) {
+    // Only button to go to next page
+    button = createButton(page, 'next');
+  } else if (page < pages) {
+    // Both buttons
+    button = ` 
+        ${createButton(page, 'prev')}
+        ${createButton(page, 'next')}
+    `;
+  } else if (page === pages && pages > 1) {
+    // Only button to go to previous page
+    button = createButton(page, 'prev');
+  }
+
+  elements.searchResPages.insertAdjacentHTML('afterbegin', button);
+};
+
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+    // render results of current page
+//   console.log(recipes);
+  const start = (page - 1) * resPerPage;
+  const end = page * resPerPage;
+
+  recipes.slice(start, end).forEach(renderRecipe);
+
+  // render the pagination buttons
+  renderButton(page, recipes.length, resPerPage);
+};
+
