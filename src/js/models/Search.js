@@ -5,22 +5,21 @@ export default class Search {
         this.query = query;
     }
 
-    getResults = (query) => {
-    const options = {
-        method: 'GET',
-        url: (`https://hapi-books.p.rapidapi.com/search/${this.query}`),
-        headers: {
-            'X-RapidAPI-Key': '034e8ad751msh04db40e1c48a0bbp1064c8jsn4d050130a415',
-            'X-RapidAPI-Host': 'hapi-books.p.rapidapi.com'
+    async getResults() {
+        try{
+            const options = {
+                method: 'GET',
+                url: `https://api.itbook.store/1.0/search/${this.query}`,
+              };
+              
+            const response = axios.request(options)
+            this.result = (await response).data.books
+            console.log(this.result);
         }
-        };
-        
-        axios.request(options).then(function (response) {
-            console.log(response.data);
-        }).catch(function (error) {
-            console.error(error);
-        });
+        catch(err){
+            console.log(err);
+        }    
     }
-    
+   
 }
 

@@ -5,29 +5,45 @@ import { elements } from './views/base';
 const state = {}
 
 const controlSearch = async () => {
-    // const query = 'harry porter';
-    const query = searchView.getInput();
+    const query = 'python'; // testing
+    // const query = searchView.getInput();
     
     console.log(query);
 
 
     if(query) {
         state.search = new Search(query);
+        searchView.clearInput();
+        searchView.clearResults();
+
         try {
-            // await state.search.getResults();
             await state.search.getResults();
+            searchView.renderResults(state.search.result);
         }
-        catch(err) {
-            console.log('Error !!!');
+        catch(error) {
+            console.log(error);
         }
     }
 }
 
+// SEARCH INPUT CLICK CONTROL
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();
     controlSearch();
 })
 
+// testing
+controlSearch();
+
+// NEXT - PREVIOUS BUTTON CLICK CONTROL
+elements.searchResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-next-previous');
+    if(btn) {
+        const goToPage = parseInt(btn.dataset.goto, 4)
+        searchView.clearResults();
+        searchView.renderResults(state.search.result, goToPage);
+    }
+});
 
 
 
