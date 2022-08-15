@@ -11,18 +11,7 @@ export const clearResults = () => {
     elements.searchResPages.innerHTML = "";
 };
 
-////////////////////////////////////////
-// highlight selected function 
-
-// export const highlightSelected = id => {
-//     const resultsArr = Array.from(document.querySelectorAll('.search-link'));
-//     resultsArr.forEach(el => {
-//         el.classList.remove('search-link-active');
-//     })
-//     document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
-// };
-
-export const limitRecipeTitle = (title, limit = 30) => {
+export const limitBookTitle = (title, limit = 25) => {
     const newTitle = [];
     if(title.length > limit) {
         title.split(" ").reduce((acc, cur) => {
@@ -36,6 +25,17 @@ export const limitRecipeTitle = (title, limit = 30) => {
     return title;
 };
 
+////////////////////////////////////////
+// highlight selected function 
+
+// export const highlightSelected = id => {
+//     const resultsArr = Array.from(document.querySelectorAll('.search-link'));
+//     resultsArr.forEach(el => {
+//         el.classList.remove('search-link-active');
+//     })
+//     document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
+// };
+
 const renderBook = (book) => {
     const markup = `
     <div class="box-1-of-2-s">
@@ -48,7 +48,7 @@ const renderBook = (book) => {
             <div class="search-pic-gradient"></div>
         </div>
         <div class="search-content">
-            <h2>${limitRecipeTitle(book.title)}</h2>
+            <h2>${limitBookTitle(book.title)}</h2>
             <h3><i class="fa-solid fa-user"></i>Author's name</h3>
             <div class="search-sub-content">
             <h1>0</h1>
