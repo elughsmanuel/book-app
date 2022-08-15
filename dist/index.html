@@ -14,153 +14,249 @@
 <body>
     <section>
         <div class="box">
-            <div class="box-2-of-3">
+            <div id="box-2-of-3" class="box-2-of-3">
                 <div class="body-pd">
                     <nav class="navigation-bar">
                         <ul class="main-nav">
-                            <li><a href="#" class="active">Book App</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Bookmarks<i class="fa-regular fa-bookmark"></i></a></li>
+                            <li><a id="home-page" href="#" class="default-active">Book App</a></li>
+                            <li class="hide-li"><a id="about-page" href="#">About</a></li>
+                            <li class="hide-li"><a id="bookmark-page" href="#">Bookmarks<i class="fa-regular fa-bookmark"></i></a></li>
                         </ul>
                         <ul class="search-nav">
-                            <input type="text" placeholder="Search book name...">
+                            <input type="text" placeholder="Search book name ...">
                             <button>
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                         </ul>
+                        <div class="navigation-mobile">
+                            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+                            <label for="navi-toggle" class="navigation__button">
+                              <span class="navigation__icon"></span>
+                            </label>
+                            <div class="navigation__background">&nbsp;</div>
+                            <nav class="navigation__nav">
+                              <ul class="navigation__list">
+                                <li class="navigation__item"><a id="home-page-2"  href="#" class="navigation__link"><span>01.</span>Home</a></li>
+                                <li class="navigation__item"><a id="about-page-2" href="#" class="navigation__link"><span>02.</span>About </a></li>
+                                <li class="navigation__item"><a id="bookmark-page-2" href="#" class="navigation__link"><span>03.</span>Bookmarks</a></li>
+                              </ul>
+                            </nav>
+                          </div>
                     </nav>
-                    <div class="monthly-box">
-                        <h3 class="heading-secondary">August Most Popular Books</h3>
-                        <div class="box-monthly">
-                            <div class="box-1-of-2">
-                                <div class="monthly-pic-preview">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657897729i/59571699.jpg" alt="Love on the Brain">
-                                </div>
-                                <div class="monthly-content">
-                                    <h2>Love on the Brain</h2>
-                                    <div class="monthly-sub-content">
-                                        <div class="box-1-of-2-sc">
-                                            <h1>1</h1>
-                                            <h3>Position</h3>
-                                            <i class="fa-solid fa-ranking-star"></i>
+                    <div class="home-box">
+                        <div class="home-box-2">
+                            <div class="monthly-box">
+                                <h3 class="heading-secondary">August Most Popular Books</h3>
+                                <div class="box-monthly">
+                                    <div class="box-1-of-2">
+                                        <div class="monthly-pic-preview">
+                                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657897729i/59571699.jpg" alt="Love on the Brain">
+                                            <div class="monthly-pic-gradient"></div>
                                         </div>
-                                        <div class="box-1-of-2-sc">
-                                            <h1>4.3</h1>
-                                            <h3>Rating</h3>
-                                            <i class="fa-solid fa-chart-line"></i>
+                                        <div class="monthly-content">
+                                            <h2>Love on the Brain</h2>
+                                            <div class="monthly-sub-content">
+                                                <div class="box-1-of-2-sc">
+                                                    <h1>1</h1>
+                                                    <h3>Position</h3>
+                                                    <i class="fa-solid fa-ranking-star"></i>
+                                                </div>
+                                                <div class="box-1-of-2-sc">
+                                                    <h1>4.3</h1>
+                                                    <h3>Rating</h3>
+                                                    <i class="fa-solid fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="btn-con">
+                                                <a href="#popup">
+                                                    <button>
+                                                        <i class="fa-solid fa-angle-right"></i>
+                                                    </button>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="btn-con">
-                                        <button>
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </button>
+                                    <div class="box-1-of-2">
+                                        <div class="monthly-pic-preview">
+                                                <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1649848581i/60435878.jpg" alt="Carrie Soto Is Back">
+                                                <div class="monthly-pic-gradient"></div>
+                                        </div>
+                                        <div class="monthly-content">
+                                            <h2>Carrie Soto Is Back</h2>
+                                            <div class="monthly-sub-content">
+                                                <div class="box-1-of-2-sc">
+                                                    <h1>2</h1>
+                                                    <h3>Position</h3>
+                                                    <i class="fa-solid fa-ranking-star"></i>
+                                                </div>
+                                                <div class="box-1-of-2-sc">
+                                                    <h1>4.48</h1>
+                                                    <h3>Rating</h3>
+                                                    <i class="fa-solid fa-chart-line"></i>
+                                                </div>
+                                            </div>
+                                            <div class="btn-con">
+                                                <a href="#popup">
+                                                    <button>
+                                                        <i class="fa-solid fa-angle-right"></i>
+                                                    </button>
+                                                </a> 
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="box-1-of-2">
-                                <div class="monthly-pic-preview">
-                                    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1649848581i/60435878.jpg" alt="Carrie Soto Is Back">
-                                </div>
-                                <div class="monthly-content">
-                                    <h2>Carrie Soto Is Back</h2>
-                                    <div class="monthly-sub-content">
-                                        <div class="box-1-of-2-sc">
-                                            <h1>2</h1>
-                                            <h3>Position</h3>
-                                            <i class="fa-solid fa-ranking-star"></i>
-                                        </div>
-                                        <div class="box-1-of-2-sc">
-                                            <h1>4.48</h1>
-                                            <h3>Rating</h3>
-                                            <i class="fa-solid fa-chart-line"></i>
-                                        </div>
+                            <div class="search-box">
+                                <h3 class="heading-secondary">Search Results</h3>
+                                <div class="box-search box-search-first-row">
+                                    <div class="box-1-of-2-s">
+                                        <a href="#popup">
+                                            <div class="search-pic-preview">
+                                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387085769i/19473525._SX50_.jpg" alt="HARRY PORTER'S DIARY">
+                                                <div class="search-pic-gradient"></div>
+                                            </div>
+                                            <div class="search-content">
+                                                <h2>HARRY PORTER'S DIARY</h2>
+                                                <h3><i class="fa-solid fa-user"></i>J.L. Lockshin</h3>
+                                                <div class="search-sub-content">
+                                                    <h1>3.72</h1>
+                                                    <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="btn-con">
-                                        <button>
-                                            <i class="fa-solid fa-angle-right"></i>
-                                        </button>
+                                    <div class="box-1-of-2-s">
+                                        <a href="#popup">
+                                            <div class="search-pic-preview">
+                                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491615542i/34820678._SX50_.jpg" alt="Harry Porter Fascinating Magic Coloring Book">
+                                                <div class="search-pic-gradient"></div>
+                                            </div>
+                                            <div class="search-content">
+                                                <h2>Harry Porter Fascina ...</h2>
+                                                <h3><i class="fa-solid fa-user"></i>Anynymous</h3>
+                                                <div class="search-sub-content">
+                                                    <h1>5</h1>
+                                                    <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="box-search">
+                                    <div class="box-1-of-2-s">
+                                        <a href="#popup">
+                                            <div class="search-pic-preview">
+                                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596457997i/54799103._SY75_.jpg" alt="Harry Porter: Trivia Quiz Books">
+                                                <div class="search-pic-gradient"></div>
+                                            </div>
+                                            <div class="search-content">
+                                                <h2>Harry Porter: Trivia ...</h2>
+                                                <h3><i class="fa-solid fa-user"></i>Maria Reyes</h3>
+                                                <div class="search-sub-content">
+                                                    <h1>3.5</h1>
+                                                    <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="box-1-of-2-s">
+                                        <a href="#popup">
+                                            <div class="search-pic-preview">
+                                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348948277i/13025338._SX50_.jpg" alt="Articles on Humboldt County, Iowa, Including:">
+                                                <div class="search-pic-gradient"></div>
+                                            </div>
+                                            <div class="search-content">
+                                                <h2>Articles on Humboldt ...</h2>
+                                                <h3><i class="fa-solid fa-user"></i>Hephaestus Books</h3>
+                                                <div class="search-sub-content">
+                                                    <h1>5</h1>
+                                                    <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="next-previous-step">
+                                    <button>
+                                        <i class="fa-solid fa-angles-left"></i>
+                                    </button>
+                                    <button>
+                                        <i class="fa-solid fa-angles-right"></i>
+                                    </button>
+                                </div> 
+                            </div>  
+                        </div>              
+                    </div>
+                    <div class="about-box about-box-display">
+                        <h2 class="heading-secondary">About Book App</h2>
+                        <div class="about-box-content">
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam est voluptatibus exercitationem natus sunt rem, reiciendis illo eaque, voluptatum obcaecati ratione blanditiis, vitae doloribus commodi. Inventore placeat eos, fuga dicta ipsum aliquam modi earum exercitationem ipsa recusandae numquam, officiis expedita, omnis doloribus. Architecto illum quis corporis perferendis aliquam eligendi nihil excepturi voluptatem sapiente incidunt hic obcaecati fugiat, a odit laudantium delectus fugit neque ea voluptate cupiditate dolores nesciunt necessitatibus aperiam enim. Quisquam eaque, quo explicabo commodi molestiae nemo maiores dolores sint eum laboriosam qui unde facilis ab? Animi ex repellendus esse ipsum accusantium accusamus reprehenderit expedita. Aut accusantium odit eaque.</p>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores incidunt, suscipit quae est minus qui rem deleniti dicta provident ipsa, placeat dolorum! Natus vero aliquid eveniet labore blanditiis nesciunt beatae est omnis, corrupti nostrum molestiae illum esse quas at cum hic ut ipsam ipsa! Fugit fugiat inventore quaerat minima doloremque cumque sunt iusto voluptas? Hic iure iusto quisquam dignissimos labore minus officiis! Neque molestias rem odio error tempore voluptate, illo distinctio reprehenderit nemo repellendus ratione alias deserunt ea voluptatum incidunt, quibusdam eum autem culpa quae amet ducimus. Voluptas, distinctio maiores. Sint at quod odio molestiae libero in minus inventore explicabo.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam at ex debitis dolores velit. Provident corrupti earum saepe beatae natus quaerat, illo ipsum animi repellat reiciendis, consequuntur dolorem inventore odio totam. Vel unde corrupti tempora aliquid molestiae ut cum totam commodi accusamus magni quae doloremque maiores voluptates amet recusandae nostrum, eos eveniet placeat culpa similique natus eum. Aspernatur, corrupti ab autem consequatur eos repudiandae! Amet, eum quas nemo, ex nobis, quisquam sint qui eaque est iure officia adipisci libero. Dolores qui accusantium quo odio quam temporibus, quisquam ullam dignissimos, rerum quod ea. Veritatis culpa debitis quia, earum ducimus nostrum aliquam!</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus numquam eligendi, animi libero officiis veritatis ipsum repellendus corporis corrupti quas, distinctio fugit molestiae enim provident mollitia sint incidunt? Quia, excepturi!</p>
                         </div>
                     </div>
-                    <div class="search-box">
-                        <h3 class="heading-secondary">Search Results</h3>
-                        <div class="box-search box-search-first-row">
-                            <div class="box-1-of-2-s">
-                                <div class="search-pic-preview">
-                                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387085769i/19473525._SX50_.jpg" alt="HARRY PORTER'S DIARY">
-                                </div>
-                                <div class="search-content">
-                                    <h2>HARRY PORTER'S DIARY</h2>
-                                    <h3>J.L. Lockshin</h3>
-                                    <div class="search-sub-content">
-                                        <h1>3.72</h1>
-                                        <h3>Rating</h3>
+                    <div class="bookmark-box bookmark-box-display">
+                        <h2 class="heading-secondary">Bookmarked Books</h2>
+                        <div class="bookmark-box-content">
+                            <div class="bookmark-pic-preview">
+                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348886342i/9360295._SX50_.jpg" alt="People of Missouri in the American Civil War">
+                            </div>
+                            <div class="bookmark-sub-box">
+                                <div class="box-2-of-3-bm">
+                                    <h2>People of Missouri in the American Civil War</h2>
+                                    <h3><i class="fa-solid fa-user"></i>Source Wikipedia</h3>
+                                    <div class="bookmark-sub-content">
+                                        <h1>4</h1>
+                                        <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="box-1-of-2-s">
-                                <div class="search-pic-preview">
-                                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1491615542i/34820678._SX50_.jpg" alt="Harry Porter Fascinating Magic Coloring Book">
-                                </div>
-                                <div class="search-content">
-                                    <h2>Harry Porter Fascinating Magic ...</h2>
-                                    <h3>Anynymous</h3>
-                                    <div class="search-sub-content">
-                                        <h1>5</h1>
-                                        <h3>Rating</h3>
+                                <div class="box-1-of-3-bm">
+                                    <div class="btn-con">
+                                        <a href="#popup">
+                                            <button>
+                                                <i class="fa-solid fa-angle-right"></i>
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="box-search">
-                            <div class="box-1-of-2-s">
-                                <div class="search-pic-preview">
-                                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1596457997i/54799103._SY75_.jpg" alt="Harry Porter: Trivia Quiz Books">
-                                </div>
-                                <div class="search-content">
-                                    <h2>Harry Porter: Trivia Quiz Books</h2>
-                                    <h3>Maria Reyes</h3>
-                                    <div class="search-sub-content">
-                                        <h1>3.5</h1>
-                                        <h3>Rating</h3>
+                        <div class="bookmark-box-content">
+                            <div class="bookmark-pic-preview">
+                                <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348890932i/7158840._SY75_.jpg" alt="Tilly's Tale">
+                            </div>
+                            <div class="bookmark-sub-box">
+                                <div class="box-2-of-3-bm">
+                                    <h2>Tilly's Tale</h2>
+                                    <h3><i class="fa-solid fa-user"></i>Harry Porter & Mandy Hedrick</h3>
+                                    <div class="bookmark-sub-content">
+                                        <h1>4.22</h1>
+                                        <h3><i class="fa-solid fa-chart-line"></i>Rating</h3>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="box-1-of-2-s">
-                                <div class="search-pic-preview">
-                                    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348948277i/13025338._SX50_.jpg" alt="Articles on Humboldt County, Iowa, Including:">
-                                </div>
-                                <div class="search-content">
-                                    <h2>Articles on Humboldt County, ...</h2>
-                                    <h3>Hephaestus Books</h3>
-                                    <div class="search-sub-content">
-                                        <h1>5</h1>
-                                        <h3>Rating</h3>
+                                <div class="box-1-of-3-bm">
+                                    <div class="btn-con">
+                                        <a href="#popup">
+                                            <button>
+                                                <i class="fa-solid fa-angle-right"></i>
+                                            </button>
+                                        </a>   
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="next-previous-step">
-                        <button>
-                            <i class="fa-solid fa-angles-left"></i>
-                        </button>
-                        <button>
-                            <i class="fa-solid fa-angles-right"></i>
-                        </button>
                     </div>
                 </div>
             </div>
-            <div class="box-1-of-3">
+            <div id="popup" class="box-1-of-3">
                 <div class="body-pd-2">
                     <div class="result-box">
                         <h2>About the book</h2>
                         <div class="result-box-preview">
                             <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387085769l/19473525.jpg" alt="HARRY PORTER'S DIARY">
                         </div>
-                        <h1>Cocktail Cookbook From The Wizarding World Of Harr…rrows With 50 Amazing Drink Recipes: Harry Potter</h1>
+                        <h1>HARRY PORTER'S DIARY</h1>
                         <h3><i class="fa-solid fa-user"></i>J.L. Lockshin</h3>
                         <div class="result-stats">
                             <div class="box-1-of-2-rs">
@@ -179,13 +275,17 @@
                             <p>Harry Porter's Diary is horrific fiction. A tale of a man's mounting fear inspired by a sudden appearance of a most horrible reflection in a mirror. Experience Harry Porter's dread and terror, as you read his final diary entries, describing his fading mirror image and the growth of the new image that is guaranteed to have you checking your own miror image twice, just to beHarry Porter's Diary is horrific fiction. A tale of a man's mounting fear inspired by a sudden appearance of a most horrible reflection in a mirror. Experience Harry Porter's dread and terror, as you read his final diary entries, describing his fading mirror image and the growth of the new image that is guaranteed to have you checking your own miror image twice, just to be sure.... If you love horror and suspense, this riveting tale will not disappoint.</p>
                         </div>
                         <div class="read-btn-con">
-                            <button>Read</button>
+                            <a target="_blank" href="https://www.goodreads.com/book/show/19473525">Read</a>
+                        </div>
+                        <div class="close-btn-con">
+                            <a href="#box-2-of-3">
+                                <i class="fa-solid fa-xmark"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
 </body>
 </html>
