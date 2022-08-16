@@ -24,7 +24,7 @@ const controlSearch = async () => {
 
     if(query) {
         state.search = new Search(query);
-        searchView.clearInput();
+        // searchView.clearInput();
         searchView.clearResults();
         renderLoader(elements.searchRes);
 

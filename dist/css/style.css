@@ -376,7 +376,7 @@ section {
 }
 
 .search-content h3 i {
-  margin-right: 1rem;
+  margin-right: 5px;
 }
 
 .search-sub-content {
@@ -386,7 +386,7 @@ section {
 .search-sub-content h1 {
   font-size: 1.5rem;
   color: var(--color-gray);
-  font-weight: 700;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -457,6 +457,14 @@ section {
   font-size: 2rem;
   color: var(--color-white);
   font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.result-box h2 {
+  font-size: 1.5rem;
+  color: var(--color-white);
+  font-weight: 300;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -868,9 +876,6 @@ section {
   .box-monthly {
     flex-direction: column;
   }
-  .box-1-of-2 {
-    margin-bottom: 3rem;
-  }
   .box-search {
     flex-direction: column;
     margin-bottom: unset;
@@ -879,12 +884,15 @@ section {
     width: 100%;
     margin-bottom: 2rem;
   }
+  .box-1-of-2-display {
+    display: none;
+  }
   .box-1-of-2-s:first-child,
   .box-1-of-2-s:nth-child(3) {
   margin-right: 0;
 }
   .search-sub-content {
-    width: 20%;
+    width: 15%;
   }
   .bookmark-sub-content {
     width: 20%;
@@ -902,6 +910,9 @@ section {
   .main-nav {
     margin-bottom: 3rem;
   }
+  .search-content {
+    flex-basis: 82%;
+  }
   .search-nav {
     width: 60%;
   }
@@ -912,33 +923,14 @@ section {
     display: flex;
     flex-direction: column;
   }
-  .monthly-box {
-    order: 1;
-    margin-bottom: 4rem;
-  }
+
   .search-box {
     margin-bottom: 4rem;
   }
   .body-pd {
     margin-bottom: 0;
   }
-  .box-1-of-3 {
-    width: 100%;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 9999;
-    transform: scale(0.25);
-    transition: all 1s;
-  }
-  .box-1-of-3:target {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1);
-  }
+ 
   .body-pd-2 {
     width: 90%;
   }
@@ -961,6 +953,9 @@ section {
   }
   .close-btn-con a i:hover {
     color: var(--color-white);
+  }
+  .spinner {
+    top: 200%;
   }
 
   .navigation-mobile {
@@ -1190,8 +1185,11 @@ section {
   .bookmark-sub-content {
     width: 50%;
   }
-  .result-box h2 {
+  .body-pd-2 h2 {
     font-size: 2.3rem;
+  }
+  .result-box h2 {
+    font-size: 1.5rem;
   }
   .result-box h1 {
     font-size: 2.3rem;
@@ -1204,8 +1202,5 @@ section {
   }
   .read-btn-con {
     margin-bottom: 4rem;
-  }
-  .spinner {
-    top: -50%;
   }
 }

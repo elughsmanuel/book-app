@@ -38,6 +38,24 @@ export const limitBookTitle = (title, limit = 25) => {
 
 
 ////////////////////////////////////////
+// Limit searched books title  
+
+export const limitBookSubtitle = (subtitle, limit = 35) => {
+    const newSubtitle = [];
+    if(subtitle.length > limit) {
+        subtitle.split(" ").reduce((acc, cur) => {
+            if(acc + cur.length <= limit) {
+                newSubtitle.push(cur);
+            }
+            return acc + cur.length;
+        }, 0);
+        return `${newSubtitle.join(" ")} ...`;
+    }
+    return subtitle;
+};
+
+
+////////////////////////////////////////
 // Highlight selected searched book 
 
 export const highlightSelected = id => {
@@ -65,11 +83,11 @@ const renderBook = (book) => {
         </div>
         <div class="search-content">
             <h2>${limitBookTitle(book.title)}</h2>
-            <h3><i class="fa-solid fa-user"></i>Author's name</h3>
+            <h3><i class="fa-solid fa-quote-left"></i>${limitBookSubtitle(book.subtitle)}</h3>
             <div class="search-sub-content">
-            <h1>0</h1>
+            <h1>${book.price}</h1>
             <h3>
-                <i class="fa-solid fa-chart-line"></i>Rating
+                <i class="fa-solid fa-chart-line"></i>Price
             </h3>
             </div>
         </div>

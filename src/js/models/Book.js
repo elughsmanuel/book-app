@@ -18,6 +18,7 @@ export default class Book {
 
             const response = axios.request(options);
             this.title = (await response).data.title;
+            this.subtitle = (await response).data.subtitle;
             this.authors = (await response).data.authors;
             this.year = (await response).data.year;
             this.pages = (await response).data.pages;
