@@ -15,7 +15,7 @@ export default class New {
               };
               
             const response = axios.request(options)
-            this.result = (await response).data.books
+            this.result = (await response).data.books;
             console.log(this.result);
         }
         catch(error){

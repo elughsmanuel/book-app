@@ -1,8 +1,11 @@
 import Search from './models/Search';
 import Book from './models/Book';
 import New from './models/New';
+
 import * as searchView from './views/searchView';
 import * as bookView from './views/bookView';
+import * as newView from './views/newView';
+
 import { clearLoader, elements, renderLoader } from './views/base';
 import { clearLoader2, renderLoader2 } from './views/base';
 
@@ -108,6 +111,7 @@ const controlNew = async () => {
     try {
         state.new = new New();
         await state.new.getResults();
+        newView.renderResults(state.new.result);
     }
     catch(error) {
         console.log('Error: New Book Error')
@@ -117,7 +121,7 @@ const controlNew = async () => {
 
 controlNew();
 
-
+/////////////////////////////////////////////
 
 
 

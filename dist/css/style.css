@@ -152,21 +152,34 @@ section {
 
 .box-monthly {
   width: 100%;
-  display: flex;
-  justify-content: space-between;
 }
 
-.box-1-of-2 {
-  flex-basis: 49%;
-  display: flex;
-  justify-content: space-between;
+.box-monthly-con {
+  width: 49%;
+  display: inline-block;
+  background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 2rem;
-  padding: 1rem 1rem;
+  margin-bottom: 2rem;
   transition: all 1s;
 }
 
-.box-1-of-2:hover {
+.box-monthly-con:first-child {
+  margin-right: 1.5rem;
+}
+
+.box-1-of-2 {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 2rem;
+  padding: 1rem 1rem;
+}
+
+.box-monthly-con:hover {
+  background-color: var(--color-gray-light);
+}
+
+.box-monthly-con:hover {
   transform: translateY(-2%);
 }
 
@@ -419,6 +432,29 @@ section {
 }
 
 .next-previous-step i:hover {
+  color: var(--color-primary-dark);
+  transform: translateY(-5%);
+}
+
+.next-previous-step-monthly {
+  width: 100%;
+  text-align: right;
+}
+
+.next-previous-step-monthly button {
+  margin: 0 1rem;
+  background-color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.next-previous-step-monthly i {
+  font-size: 2.5rem;
+  color: var(--color-gray);
+  transition: all 1s;
+}
+
+.next-previous-step-monthly i:hover {
   color: var(--color-primary-dark);
   transform: translateY(-5%);
 }

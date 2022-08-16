@@ -38,7 +38,7 @@ export const limitBookTitle = (title, limit = 25) => {
 
 
 ////////////////////////////////////////
-// Limit searched books title  
+// Limit searched books subtitle  
 
 export const limitBookSubtitle = (subtitle, limit = 35) => {
     const newSubtitle = [];
@@ -138,4 +138,4 @@ export const renderResults = (books, page = 1, resPerPage = 4) => {
     books.slice(start, end).forEach(renderBook);
 
     renderButton(page, books.length, resPerPage);
-}
+};
