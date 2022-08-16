@@ -19,11 +19,14 @@ export default class Book {
             const response = axios.request(options);
             this.title = (await response).data.title;
             this.authors = (await response).data.authors;
+            this.year = (await response).data.year;
             this.pages = (await response).data.pages;
             this.rating = (await response).data.rating;
             this.desc = (await response).data.desc;
             this.image = (await response).data.image;
             this.url = (await response).data.url;
+            this.result = (await response).data;
+            // console.log(this.result);
         }
         catch(error) {
             console.log('Error: Book API Error');

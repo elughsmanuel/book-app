@@ -6,7 +6,8 @@ export const elements = {
     searchInput: document.querySelector('.search-field'),
     searchRes: document.querySelector('.search-box'),
     searchResList: document.querySelector('.search-list'),
-    searchResPages: document.querySelector('.next-previous-step')
+    searchResPages: document.querySelector('.next-previous-step'),
+    book: document.querySelector('.result-box-con')
 };
 
 

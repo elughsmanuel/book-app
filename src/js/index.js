@@ -1,6 +1,7 @@
 import Search from './models/Search';
 import Book from './models/Book';
 import * as searchView from './views/searchView';
+import * as bookView from './views/bookView';
 import { clearLoader, elements, renderLoader } from './views/base';
 
 
@@ -15,9 +16,9 @@ const state = {};
 // // SEARCH CONTROLLER
 
 const controlSearch = async () => {
-    const query = 'python'; // testing
+    const query = 'javascript'; // testing
     // const query = searchView.getInput();
-    console.log(query);
+    // console.log(query);
 
     if(query) {
         state.search = new Search(query);
@@ -66,15 +67,19 @@ elements.searchResPages.addEventListener('click', e => {
 const controlBook = async () => {
     const id = window.location.hash.replace('#', '');
     // const id = 9781617294136;
-    console.log(id);
+    // console.log(id);
 
     if(id) {
+        bookView.clearBook();
         if(state.search)searchView.highlightSelected(id);
         state.book = new Book(id);
         
         try {
             await state.book.getBook();
-            console.log(state.book);
+            // console.log(state.book);
+            bookView.renderBook(
+                state.book
+            );
         }
         catch(error) {
             console.log('Error: Book Error');
@@ -83,9 +88,10 @@ const controlBook = async () => {
     }
 }
 
-['hashchange', 'load'].forEach(event => window.addEventListener(event, controlBook));
+window.addEventListener('hashchange', controlBook);
+window.addEventListener('load', controlBook);
 
-
+// ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlBook));
 
 
 
