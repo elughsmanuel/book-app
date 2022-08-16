@@ -1,9 +1,9 @@
 import Search from './models/Search';
 import Book from './models/Book';
+import New from './models/New';
 import * as searchView from './views/searchView';
 import * as bookView from './views/bookView';
 import { clearLoader, elements, renderLoader } from './views/base';
-
 import { clearLoader2, renderLoader2 } from './views/base';
 
 
@@ -90,36 +90,32 @@ const controlBook = async () => {
             console.log(error);
         }
     }
-}
+};
 
 window.addEventListener('hashchange', controlBook);
 window.addEventListener('load', controlBook);
 
 // ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlBook));
 
+/////////////////////////////////////////////
 
 
 
+////////////////////////////////////////////
+// // NEW CONTROLLER
 
+const controlNew = async () => {
+    try {
+        state.new = new New();
+        await state.new.getResults();
+    }
+    catch(error) {
+        console.log('Error: New Book Error')
+        console.log(error);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+controlNew();
 
 
 
