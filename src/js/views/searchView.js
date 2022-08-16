@@ -1,15 +1,26 @@
 import { elements } from "./base"; 
 
+
+////////////////////////////////////////
+// Get search value from input HTML  
+
 export const getInput = () => elements.searchInput.value;
+
+
+////////////////////////////////////////
+// Clear search input and search results
 
 export const clearInput = () => {
     elements.searchInput.value = "";
 };
-
 export const clearResults = () => {
     elements.searchResList.innerHTML = "";
     elements.searchResPages.innerHTML = "";
 };
+
+
+////////////////////////////////////////
+// Limit searched books title  
 
 export const limitBookTitle = (title, limit = 25) => {
     const newTitle = [];
@@ -25,16 +36,21 @@ export const limitBookTitle = (title, limit = 25) => {
     return title;
 };
 
-////////////////////////////////////////
-// highlight selected function 
 
-// export const highlightSelected = id => {
-//     const resultsArr = Array.from(document.querySelectorAll('.search-link'));
-//     resultsArr.forEach(el => {
-//         el.classList.remove('search-link-active');
-//     })
-//     document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
-// };
+////////////////////////////////////////
+// Highlight selected searched book 
+
+export const highlightSelected = id => {
+    const resultsArr = Array.from(document.querySelectorAll('.search-link'));
+    resultsArr.forEach(el => {
+        el.classList.remove('search-link-active');
+    })
+    document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
+};
+
+
+////////////////////////////////////////
+// Display searched books 
 
 const renderBook = (book) => {
     const markup = `
@@ -64,6 +80,9 @@ const renderBook = (book) => {
 };
 
 
+////////////////////////////////////////
+// Search books next/prev page button
+
 const createButton = (page, type) => `
     <button class="btn-next-previous" data-goto=${type === 'prev' ? page - 1 : page + 1}>
         <i class="fa-solid fa-angles-${type === 'prev' ? 'left' : 'right'}"></i>
@@ -89,6 +108,10 @@ const renderButton = (page, numResults, resPerPage) => {
 
     elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 };
+
+
+////////////////////////////////////////
+// Display searched books and other pages
 
 export const renderResults = (books, page = 1, resPerPage = 4) => {
     const start = (page - 1) * resPerPage;

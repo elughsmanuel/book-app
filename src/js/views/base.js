@@ -1,3 +1,6 @@
+////////////////////////////////////////
+// DOM parsing for all elements
+
 export const elements = {
     searchForm: document.querySelector('.search'),
     searchInput: document.querySelector('.search-field'),
@@ -5,6 +8,10 @@ export const elements = {
     searchResList: document.querySelector('.search-list'),
     searchResPages: document.querySelector('.next-previous-step')
 };
+
+
+////////////////////////////////////////
+// Loader DOM and Functionality
 
 export const elementStrings = {
     loader: 'loader'

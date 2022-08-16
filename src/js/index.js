@@ -1,8 +1,18 @@
 import Search from './models/Search';
+import Book from './models/Book';
 import * as searchView from './views/searchView';
 import { clearLoader, elements, renderLoader } from './views/base';
 
+
+////////////////////////////////////////
+// Global state for all functions
+
 const state = {};
+
+
+
+////////////////////////////////////////////
+// // SEARCH CONTROLLER
 
 const controlSearch = async () => {
     const query = 'python'; // testing
@@ -21,6 +31,7 @@ const controlSearch = async () => {
             searchView.renderResults(state.search.result);
         }
         catch(error) {
+            console.log('Error: Search Error');
             console.log(error);
         }
     }
@@ -45,9 +56,34 @@ elements.searchResPages.addEventListener('click', e => {
     }
 });
 
+/////////////////////////////////////////////
 
 
 
+////////////////////////////////////////////
+// // BOOK CONTROLLER
+
+const controlBook = async () => {
+    const id = window.location.hash.replace('#', '');
+    // const id = 9781617294136;
+    console.log(id);
+
+    if(id) {
+        if(state.search)searchView.highlightSelected(id);
+        state.book = new Book(id);
+        
+        try {
+            await state.book.getBook();
+            console.log(state.book);
+        }
+        catch(error) {
+            console.log('Error: Book Error');
+            console.log(error);
+        }
+    }
+}
+
+['hashchange', 'load'].forEach(event => window.addEventListener(event, controlBook));
 
 
 
