@@ -270,6 +270,7 @@ section {
 
 .search-box {
   width: 100%;
+  position: relative;
 }
 
 .search-list {
@@ -426,6 +427,7 @@ section {
   width: 80%;
   margin: 0 auto;
   padding: 3rem 0;
+  position: relative;
 }
 
 .result-box-con {
@@ -529,11 +531,11 @@ section {
 }
 
 .synopsis-box p {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--color-gray);
   font-weight: 200;
   letter-spacing: 1px;
-  line-height: 150%;
+  line-height: 180%;
   margin-bottom: 3rem;
 }
 
@@ -715,9 +717,9 @@ section {
   width: 100px;
   height: 50px;
   position: absolute;
-  top: 40%;
+  top: 500%;
   bottom: 0;
-  right: 25%;
+  right: 0;
   left: 0;
   margin: auto;
   text-align: center;
@@ -732,10 +734,37 @@ section {
           animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
 }
 
-p {
+.spinner p {
   color: var(--color-primary);
   margin-top: 5px;
-  font-family: sans-serif;
+  letter-spacing: 3px;
+  font-size: 15px;
+}
+
+.spinner2 {
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top: 300%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+.spinner2 .ball2 {
+  width: 50px;
+  height: 50px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  display: inline-block;
+  -webkit-animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+          animation: motion 3s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+.spinner2 p {
+  color: var(--color-white);
+  margin-top: 5px;
   letter-spacing: 3px;
   font-size: 15px;
 }
@@ -932,10 +961,6 @@ p {
   }
   .close-btn-con a i:hover {
     color: var(--color-white);
-  }
-  .spinner {
-    top: 30%;
-    right: 0;
   }
 
   .navigation-mobile {
@@ -1181,6 +1206,6 @@ p {
     margin-bottom: 4rem;
   }
   .spinner {
-    top: 0;
+    top: -50%;
   }
 }

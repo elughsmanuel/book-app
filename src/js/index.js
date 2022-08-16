@@ -4,6 +4,8 @@ import * as searchView from './views/searchView';
 import * as bookView from './views/bookView';
 import { clearLoader, elements, renderLoader } from './views/base';
 
+import { clearLoader2, renderLoader2 } from './views/base';
+
 
 ////////////////////////////////////////
 // Global state for all functions
@@ -16,8 +18,8 @@ const state = {};
 // // SEARCH CONTROLLER
 
 const controlSearch = async () => {
-    const query = 'javascript'; // testing
-    // const query = searchView.getInput();
+    // const query = 'javascript'; // testing
+    const query = searchView.getInput();
     // console.log(query);
 
     if(query) {
@@ -71,12 +73,14 @@ const controlBook = async () => {
 
     if(id) {
         bookView.clearBook();
+        renderLoader2(elements.book);
         if(state.search)searchView.highlightSelected(id);
         state.book = new Book(id);
         
         try {
             await state.book.getBook();
             // console.log(state.book);
+            clearLoader2();
             bookView.renderBook(
                 state.book
             );
