@@ -5,10 +5,11 @@ import New from './models/New';
 import * as searchView from './views/searchView';
 import * as bookView from './views/bookView';
 import * as newView from './views/newView';
+import { elements } from './views/base';
 
-import { clearLoader, elements, renderLoader } from './views/base';
+import { clearLoader, renderLoader } from './views/base';
 import { clearLoader2, renderLoader2 } from './views/base';
-
+import { clearLoader3, renderLoader3 } from './views/base';
 
 ////////////////////////////////////////
 // Global state for all functions
@@ -109,8 +110,10 @@ window.addEventListener('load', controlBook);
 
 const controlNew = async () => {
     try {
+        renderLoader3(elements.newResList);
         state.new = new New();
         await state.new.getResults();
+        clearLoader3();
         newView.renderResults(state.new.result);
     }
     catch(error) {

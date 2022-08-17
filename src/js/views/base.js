@@ -59,3 +59,28 @@ export const clearLoader2 = () => {
     const loader2 = document.querySelector(`.${elementStrings2.loader2}`);
     if(loader2) loader2.parentElement.removeChild(loader2);
 }
+
+
+
+
+////////////////////////////////////////
+// Loader III DOM and Functionality
+
+export const elementStrings3 = {
+    loader3: 'loader3'
+};
+
+export const renderLoader3 = parent => {
+    const loader3 = `
+        <div class="spinner3 loader3">
+            <div class="ball3"></div>
+            <p>LOADING...</p>
+        </div>
+    `;
+    parent.insertAdjacentHTML('afterbegin', loader3);
+};
+
+export const clearLoader3 = () => {
+    const loader3 = document.querySelector(`.${elementStrings3.loader3}`);
+    if(loader3) loader3.parentElement.removeChild(loader3);
+}
