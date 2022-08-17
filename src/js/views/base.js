@@ -8,7 +8,8 @@ export const elements = {
     searchResList: document.querySelector('.search-list'),
     searchResPages: document.querySelector('.next-previous-step'),
     book: document.querySelector('.result-box-con'),
-    newBookList: document.querySelector('.box-monthly')
+    newResList: document.querySelector('.box-monthly'),
+    newResPages: document.querySelector('.next-previous-step-monthly')
 };
 
 

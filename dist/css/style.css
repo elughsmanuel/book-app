@@ -206,8 +206,8 @@ section {
 .monthly-pic-preview img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: bottom;
+  object-fit: none;
+  object-position: center;
   border-radius: 2rem;
 }
 

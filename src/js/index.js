@@ -56,7 +56,7 @@ controlSearch();
 elements.searchResPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-next-previous');
     if(btn) {
-        const goToPage = parseInt(btn.dataset.goto, 4)
+        const goToPage = parseInt(btn.dataset.goto, 10);
         searchView.clearResults();
         searchView.renderResults(state.search.result, goToPage);
     }
@@ -120,6 +120,16 @@ const controlNew = async () => {
 }
 
 controlNew();
+
+// NEXT - PREVIOUS BUTTON CLICK CONTROL
+elements.newResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-next-previous-monthly');
+    if(btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        newView.clearResults();
+        newView.renderResults(state.new.result, goToPage);
+    }
+});
 
 /////////////////////////////////////////////
 
