@@ -147,7 +147,7 @@ section {
   font-size: 2rem;
   color: var(--color-black);
   font-weight: 600;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .box-monthly {
@@ -161,7 +161,7 @@ section {
   background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   transition: all 1s;
 }
 
@@ -298,7 +298,7 @@ section {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 2rem;
   cursor: pointer;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   transition: all 1s;
 }
 
@@ -471,7 +471,7 @@ section {
   width: 100%;
 }
 
-.body-pd-2 h2 {
+.result-box h2 {
   font-size: 2rem;
   color: var(--color-white);
   font-weight: 600;
@@ -498,10 +498,10 @@ section {
   margin-bottom: 1rem;
 }
 
-.result-box h2 {
+.result-box h5 {
   font-size: 1.5rem;
   color: var(--color-white);
-  font-weight: 300;
+  font-weight: 200;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -509,7 +509,7 @@ section {
 .result-box h3 {
   font-size: 1.5rem;
   color: var(--color-gray);
-  font-weight: 500;
+  font-weight: 600;
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -790,7 +790,7 @@ section {
   width: 100px;
   height: 50px;
   position: absolute;
-  top: 300%;
+  top: 400%;
   bottom: 0;
   right: 0;
   left: 0;
@@ -886,10 +886,13 @@ section {
   .box-1-of-2-s {
     width: 49%;
   }
+  .box-monthly-con:first-child {
+    margin-right: 1rem;
+  }
   .box-1-of-2-s:first-child,
   .box-1-of-2-s:nth-child(3) {
   margin-right: 1rem;
-}
+  }
   .search-sub-content {
     width: 25%;
   }
@@ -926,6 +929,8 @@ section {
   }
   .box-1-of-3 {
     flex-basis: 35%;
+    position: absolute;
+    top: 25%;
   }
   .box-2-of-3 {
     flex-basis: 65%;
@@ -946,6 +951,15 @@ section {
   }
   .box-1-of-2-display {
     display: none;
+  }
+  .box-monthly-con {
+    width: 100%;
+  }
+  .box-monthly-con:last-child {
+    display: none;
+  }
+  .box-monthly-con:first-child {
+    margin-right: 0;
   }
   .box-1-of-2-s:first-child,
   .box-1-of-2-s:nth-child(3) {
@@ -1000,8 +1014,8 @@ section {
   .close-btn-con {
     display: unset;
     position: absolute;
-    top: 4%;
-    right: 4%;
+    top: 2%;
+    right: 2%;
   }
   .close-btn-con a {
       text-decoration: none;
@@ -1026,8 +1040,8 @@ section {
   }
   .navigation__button {
     background-color: unset;
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     position: absolute;
     top: 2rem;
     right: 4rem;
@@ -1039,8 +1053,8 @@ section {
     position: fixed;
   }
   .navigation__background {
-    height: 6rem;
-    width: 6rem;
+    height: 5rem;
+    width: 5rem;
     border-radius: 50%;
     position: fixed;
     top: 2rem;
@@ -1115,7 +1129,7 @@ section {
 
   .navigation__icon {
     position: relative;
-    margin-top: 3rem;
+    margin-top: 2.35rem;
   }
   .navigation__icon,
   .navigation__icon::before,
@@ -1169,11 +1183,11 @@ section {
 
 @media only screen and (max-width: 480px) {
   .navigation__button {
-    top: 1rem;
+    top: 1.5rem;
     right: 1rem;
   }
   .navigation__background {
-    top: 1rem;
+    top: 1.5rem;
     right: 1rem;
   }
   .main-nav {
@@ -1219,10 +1233,13 @@ section {
     margin-bottom: 4rem;
   }
   .box-1-of-2 {
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
   .monthly-box {
     margin-bottom: 2rem;
+  }
+  .monthly-content h2 {
+    font-size: 2rem;
   }
   .bookmark-box-content {
     margin-bottom: 2rem;
@@ -1245,14 +1262,17 @@ section {
   .bookmark-sub-content {
     width: 50%;
   }
-  .body-pd-2 h2 {
-    font-size: 2.3rem;
-  }
   .result-box h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+  }
+  .result-box h4 {
     font-size: 1.5rem;
   }
   .result-box h1 {
-    font-size: 2.3rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 120%;
   }
   .synopsis-box h4 {
     font-size: 2rem;
@@ -1262,5 +1282,9 @@ section {
   }
   .read-btn-con {
     margin-bottom: 4rem;
+  }
+  .close-btn-con {
+    top: 1.5%;
+    right: 1.5%;
   }
 }

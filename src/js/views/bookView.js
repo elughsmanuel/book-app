@@ -15,6 +15,7 @@ export const clearBook = () => {
 export const renderBook = (book) => {
     const markup = `
         <div class="result-box">
+            <h2>About the book</h2>
             <div class="result-box-preview">
                 <img
                 src="${book.image}"
@@ -23,7 +24,7 @@ export const renderBook = (book) => {
             </div>
             <h1>${book.title}</h1>
             <h3><i class="fa-solid fa-user"></i>${book.authors}</h3>
-            <h2>${book.subtitle}</h2>
+            <h5>${book.subtitle}</h5>
             <div class="result-stats">
                 <div class="box-1-of-2-rs">
                 <h4>${book.year}</h4>
@@ -54,11 +55,11 @@ export const renderBook = (book) => {
                 >Read</a
                 >
             </div>
-            <!-- <div class="close-btn-con">
+            <div class="close-btn-con">
                 <a href="">
                 <i class="fa-solid fa-xmark"></i>
                 </a>
-            </div> -->
+            </div>
         </div>
     `;
     elements.book.insertAdjacentHTML('beforeend', markup);
