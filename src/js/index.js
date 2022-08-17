@@ -77,7 +77,7 @@ const controlBook = async () => {
     if(id) {
         bookView.clearBook();
         renderLoader2(elements.book);
-        if(state.search)searchView.highlightSelected(id);
+        // if(state.search)searchView.highlightSelected(id);
         state.book = new Book(id);
         
         try {

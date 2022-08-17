@@ -28,9 +28,6 @@ export const limitBookTitle = (title, limit = 25) => {
 };
 
 
-
-
-
 ////////////////////////////////////////
 // Display searched books 
 

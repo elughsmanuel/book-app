@@ -335,7 +335,7 @@ section {
 }
 
 /* testing highlight selected */
-/* .box-1-of-2-s:first-child {
+.box-1-of-2-s:first-child {
   background-color: var(--color-primary);
   background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
 }
@@ -344,7 +344,7 @@ section {
 .box-1-of-2-s:first-child .search-sub-content h1,
 .box-1-of-2-s:first-child .search-sub-content h3 {
   color: var(--color-white);
-} */
+}
 /* */
 
 .search-pic-preview {

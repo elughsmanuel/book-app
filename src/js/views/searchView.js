@@ -55,16 +55,16 @@ export const limitBookSubtitle = (subtitle, limit = 35) => {
 };
 
 
-////////////////////////////////////////
-// Highlight selected searched book 
+// ////////////////////////////////////////
+// // Highlight selected searched book 
 
-export const highlightSelected = id => {
-    const resultsArr = Array.from(document.querySelectorAll('.search-link'));
-    resultsArr.forEach(el => {
-        el.classList.remove('search-link-active');
-    })
-    document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
-};
+// export const highlightSelected = id => {
+//     const resultsArr = Array.from(document.querySelectorAll('.search-link'));
+//     resultsArr.forEach(el => {
+//         el.classList.remove('search-link-active');
+//     })
+//     document.querySelector(`.search-link[href="#${id}"]`).classList.add('search-link-active');
+// };
 
 
 ////////////////////////////////////////
