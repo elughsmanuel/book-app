@@ -33,7 +33,7 @@ export const limitBookAuthors = (authors, limit = 25) => {
 ////////////////////////////////////////
 // Limit searched books subtitle  
 
-export const limitBookSubtitle = (subtitle, limit = 35) => {
+export const limitBookSubtitle = (subtitle, limit = 20) => {
   const newSubtitle = [];
   if(subtitle.length > limit) {
       subtitle.split(" ").reduce((acc, cur) => {
