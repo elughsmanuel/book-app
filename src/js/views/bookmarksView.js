@@ -11,6 +11,46 @@ export const toggleBookmarkedMenu = (numLikes) => {
   elements.bookmarksMenu.style.visibility = numLikes > 0 ? "visible" : "hidden";
 };
 
+
+////////////////////////////////////////
+// Limit bookmarked books author  
+
+export const limitBookAuthors = (authors, limit = 25) => {
+  const newAuthors = [];
+  if(authors.length > limit) {
+      authors.split(" ").reduce((acc, cur) => {
+          if(acc + cur.length <= limit) {
+              newAuthors.push(cur);
+          }
+          return acc + cur.length;
+      }, 0);
+      return `${newAuthors.join(" ")} ...`;
+  }
+  return authors;
+};
+
+
+////////////////////////////////////////
+// Limit searched books subtitle  
+
+export const limitBookSubtitle = (subtitle, limit = 35) => {
+  const newSubtitle = [];
+  if(subtitle.length > limit) {
+      subtitle.split(" ").reduce((acc, cur) => {
+          if(acc + cur.length <= limit) {
+              newSubtitle.push(cur);
+          }
+          return acc + cur.length;
+      }, 0);
+      return `${newSubtitle.join(" ")} ...`;
+  }
+  return subtitle;
+};
+
+
+////////////////////////////////////////
+// Display bookmarked books 
+
 export const renderBookmark = (bookmark) => {
   const markup = `
         <div class="bookmark-box-content">
@@ -23,8 +63,8 @@ export const renderBookmark = (bookmark) => {
                 </div>
                 <div class="bookmark-sub-box">
                     <h2>${bookmark.title}</h2>
-                    <h3><i class="fa-solid fa-user"></i>${bookmark.authors}</h3>
-                    <h4><i class="fa-solid fa-quote-left"></i>${bookmark.subtitle}</h4>
+                    <h3><i class="fa-solid fa-user"></i>${limitBookAuthors(bookmark.authors)}</h3>
+                    <h4><i class="fa-solid fa-quote-left"></i>${limitBookSubtitle(bookmark.subtitle)}</h4>
                     <div class="bookmark-sub-con">
                         <div class="bookmark-sub-content">
                             <h1>${bookmark.year}</h1>

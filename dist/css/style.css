@@ -740,13 +740,12 @@ section {
 }
 
 .bookmark-sub-con {
-  width: 20%;
+  width: 27%;
   display: flex;
-  justify-content: space-between;
 }
 
 .bookmark-sub-content {
-  width: 15%;
+  width: 33.33%;
 }
 
 .bookmark-sub-content h1 {
@@ -764,7 +763,6 @@ section {
   text-transform: uppercase;
   margin-bottom: 0;
   text-align: center;
-  display: flex;
 }
 
 .bookmark-sub-content i {
