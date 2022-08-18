@@ -268,7 +268,7 @@ section {
 .monthly-content button {
   padding: 1rem 1.5rem;
   border: none;
-  background-color: var(--color-primary);
+  background-color: red;
   border-radius: 1rem;
   cursor: pointer;
   transition: all 1s;
