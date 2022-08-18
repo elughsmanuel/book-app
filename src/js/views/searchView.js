@@ -107,6 +107,12 @@ const createButton = (page, type) => `
     </button>
 `;
 
+const noButton = (page, type) => `
+    <button style="visibility: hidden;" class="btn-next-previous" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+        <i class="fa-solid fa-angles-${type === 'prev' ? 'left' : 'right'}"></i>
+    </button>
+`;
+
 const renderButton = (page, numResults, resPerPage) => {
     const pages = Math.ceil(numResults / resPerPage);
 
@@ -122,6 +128,9 @@ const renderButton = (page, numResults, resPerPage) => {
     }
     else if(page === pages && pages > 1) {
         button = createButton(page, 'prev');
+    }
+    else {
+        button = noButton(page, 'next');
     }
 
     elements.searchResPages.insertAdjacentHTML('afterbegin', button);
