@@ -44,6 +44,8 @@ section {
 
 .box-2-of-3 {
   flex-basis: 75%;
+  height: 100vh;
+  overflow: auto;
 }
 
 .body-pd {
@@ -471,6 +473,10 @@ section {
   width: 100%;
 }
 
+.result-box {
+  position: relative;
+}
+
 .result-box h2 {
   font-size: 2rem;
   color: var(--color-white);
@@ -608,6 +614,20 @@ section {
   background-color: var(--color-primary-dark);
 }
 
+.result-bookmark {
+  position: absolute;
+  top: 0;
+  right: 2%;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.result-bookmark i {
+  font-size: 2.5rem;
+  color: var(--color-gray-light);
+}
+
 .home-box-display {
   display: none;
 }
@@ -642,9 +662,7 @@ section {
   background-color: var(--color-white);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   border-radius: 2rem;
-  display: flex;
   padding: 1rem;
-  justify-content: space-between;
   transition: all 1s;
   margin-bottom: 3rem;
 }
@@ -654,9 +672,17 @@ section {
   background-color: var(--color-gray-light);
 }
 
+.bookmark-link {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .bookmark-pic-preview {
   flex-basis: 8%;
-  height: 10rem;
+  height: 12rem;
+  position: relative;
 }
 
 .bookmark-pic-preview img {
@@ -665,11 +691,19 @@ section {
   border-radius: 2rem;
 }
 
+.bookmark-pic-gradient {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+  border-radius: 2rem;
+  opacity: 0.6;
+}
+
 .bookmark-sub-box {
   flex-basis: 90%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .box-1-of-3-bm {
@@ -694,8 +728,21 @@ section {
   margin-bottom: 1rem;
 }
 
+.bookmark-sub-box h4 {
+  font-size: 1.5rem;
+  color: var(--color-gray);
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
 .bookmark-sub-box h3 i {
-  margin-right: 1rem;
+  margin-right: 5px;
+}
+
+.bookmark-sub-con {
+  width: 20%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .bookmark-sub-content {
@@ -717,6 +764,7 @@ section {
   text-transform: uppercase;
   margin-bottom: 0;
   text-align: center;
+  display: flex;
 }
 
 .bookmark-sub-content i {

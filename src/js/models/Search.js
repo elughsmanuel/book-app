@@ -18,7 +18,7 @@ export default class Search {
               
             const response = axios.request(options)
             this.result = (await response).data.books
-            console.log(this.result);
+            // console.log(this.result);
         }
         catch(error){
             console.log('Error: Search API Error');

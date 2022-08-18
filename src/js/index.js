@@ -1,10 +1,12 @@
 import Search from './models/Search';
 import Book from './models/Book';
 import New from './models/New';
+import Bookmarks from './models/Bookmarks';
 
 import * as searchView from './views/searchView';
 import * as bookView from './views/bookView';
 import * as newView from './views/newView';
+import * as bookmarksView from './views/bookmarksView';
 import { elements } from './views/base';
 
 import { clearLoader, renderLoader } from './views/base';
@@ -15,6 +17,7 @@ import { clearLoader3, renderLoader3 } from './views/base';
 // Global state for all functions
 
 const state = {};
+
 
 
 
@@ -67,6 +70,7 @@ elements.searchResPages.addEventListener('click', e => {
 
 
 
+
 ////////////////////////////////////////////
 // // BOOK CONTROLLER
 
@@ -86,7 +90,8 @@ const controlBook = async () => {
             // console.log(state.book);
             clearLoader2();
             bookView.renderBook(
-                state.book
+                state.book,
+                state.bookmarks.isBookmarked(id)
             );
         }
         catch(error) {
@@ -102,6 +107,7 @@ window.addEventListener('load', controlBook);
 // ['hashchange', 'load'].forEach(event => window.addEventListener(event, controlBook));
 
 /////////////////////////////////////////////
+
 
 
 
@@ -137,6 +143,55 @@ elements.newResPages.addEventListener('click', e => {
 /////////////////////////////////////////////
 
 
+
+
+////////////////////////////////////////////
+// // BOOKMARK CONTROLLER
+
+const controlBookmark = () => {
+    if(!state.bookmarks) state.bookmarks = new Bookmarks();
+    const currentID = state.book.id;
+
+    if(!state.bookmarks.isBookmarked(currentID)) {
+        const newBookmark = state.bookmarks.addBookmark(
+            currentID,
+            state.book.title,
+            state.book.authors,
+            state.book.subtitle,
+            state.book.year,
+            state.book.pages,
+            state.book.rating,
+            state.book.image
+        );
+
+        bookmarksView.toggleBookmarkBtn(true);
+        bookmarksView.renderBookmark(newBookmark);
+    }
+
+    else {
+        state.bookmarks.deleteBookmark(currentID);
+        bookmarksView.toggleBookmarkBtn(false);
+        bookmarksView.deleteBookmark(currentID);
+    }
+    bookmarksView.toggleBookmarkedMenu(state.bookmarks.getNumBookmarks());
+};
+
+window.addEventListener('load', () => {
+    state.bookmarks = new Bookmarks();
+    state.bookmarks.readStorage();
+    bookmarksView.toggleBookmarkedMenu(state.bookmarks.getNumBookmarks());
+    state.bookmarks.bookmarks.forEach(bookmark => bookmarksView.renderBookmark(bookmark));
+});
+
+
+// BOOKMARK BUTTON CLICK
+elements.book.addEventListener('click', e => {
+    if(e.target.matches('.result-bookmark, .result-bookmark *')) {
+        controlBookmark();
+    }
+});
+
+/////////////////////////////////////////////
 
 
 
@@ -211,3 +266,5 @@ bookmarkPage2.addEventListener('click', function() {
     aboutBox2.classList.add('about-box-display');
     bookmarkBox2.classList.remove('bookmark-box-display');
 });
+
+/////////////////////////////////////////////

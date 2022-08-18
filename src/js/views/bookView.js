@@ -12,10 +12,13 @@ export const clearBook = () => {
 ////////////////////////////////////////
 // Display selected book details
 
-export const renderBook = (book) => {
+export const renderBook = (book, isBookmarked) => {
     const markup = `
         <div class="result-box">
             <h2>About the book</h2>
+            <button class="result-bookmark">
+                <i class="fa-${isBookmarked ? 'solid' : 'regular'} fa-bookmark"></i>
+            </button>
             <div class="result-box-preview">
                 <img
                 src="${book.image}"

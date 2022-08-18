@@ -9,7 +9,9 @@ export const elements = {
     searchResPages: document.querySelector('.next-previous-step'),
     book: document.querySelector('.result-box-con'),
     newResList: document.querySelector('.box-monthly'),
-    newResPages: document.querySelector('.next-previous-step-monthly')
+    newResPages: document.querySelector('.next-previous-step-monthly'),
+    bookmarksMenu: document.querySelector('.fa-bookmark'),
+    bookmarksList: document.querySelector('.bookmark-list')
 };
 
 
