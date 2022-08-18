@@ -1369,4 +1369,8 @@ section {
   .bookmark-sub-con {
     width: 90%;
   }
+  .result-box h2 {
+    text-align: unset;
+    margin-left: 6rem;
+  }
 }
